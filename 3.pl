@@ -19,15 +19,4 @@
 # 
 # In your puzzle input, how many of the listed triangles are possible?
 
-$triangles = 0;
-$lines = 0;
-
-while(<>) {
-	/(\d+)\s*(\d+)\s*(\d+)/;
-
-	$triangles++ if $1 + $2 > $3 && $2 + $3 > $1 && $1 + $3 > $2;
-	$lines++;
-	print "($triangles) $1 $2 $3:\t", join("\t", $1 + $2, $3, $2 + $3, $1, $1 + $3, $2). "\n";
-}
-
-print "Triangles: $triangles, Lines: $lines\n";
+while(<>) {$t++ if /(\d+)\s+(\d+)\s+(\d+)/&&$1+$2>$3&&$2+$3>$1&&$1+$3>$2;};print $t;
